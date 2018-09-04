@@ -1,10 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        node {
+          label 'my-defined-label'
+          customWorkspace '/MasterDetailApp'
+        }
+  }
 
     stages {
         stage('Install Gems') {
             steps {
-                sh 'cd MasterDetailApp'
                 sh 'bundle install'
             }
         }
