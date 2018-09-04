@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Install Gems') {
             steps {
+                sh 'cd MasterDetailApp'
                 sh 'bundle install'
             }
         }
