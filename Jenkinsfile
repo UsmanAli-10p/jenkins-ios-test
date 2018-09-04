@@ -9,10 +9,10 @@ pipeline {
                 }
             }
         }
-        stage('Install Pods') {
+        stage('Generate IPA') {
             steps {
                 dir ('MasterDetailApp') { 
-                    sh 'bundle exec pod install'
+                    sh 'bundle exec fastlane qaRelease'
                 }
             }
         }
