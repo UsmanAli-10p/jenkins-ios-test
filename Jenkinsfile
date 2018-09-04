@@ -3,39 +3,32 @@ pipeline {
 
     stages {
         stage('Install Gems') {
-            dir ('MasterDetailApp') {
-                steps {
-                    sh 
+            steps {
+                dir ('MasterDetailApp') { 
                     sh 'bundle install'
                 }
             }
         }
         stage('Install Pods') {
-            dir ('MasterDetailApp') {
-                steps {
+            steps {
+                dir ('MasterDetailApp') { 
                     sh 'bundle exec pod install'
                 }
             }
         }
         stage('Build') {
-            dir ('MasterDetailApp') {
-                steps {
-                    echo 'Building..'
-                }
+            steps {
+                echo 'Building..'
             }
         }
         stage('Test') {
-            dir ('MasterDetailApp') {
-                steps {
-                    echo 'Testing..'
-                }
+            steps {
+                echo 'Testing..'
             }
         }
         stage('Deploy') {
-            dir ('MasterDetailApp') {
-                steps {
-                    echo 'Deploying....'
-                }
+            steps {
+                echo 'Deploying....'
             }
         }
     }
