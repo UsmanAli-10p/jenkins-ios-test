@@ -81,6 +81,11 @@ class Fastfile: LaneFile {
     }
 
     func package(config: Configuration) {
+        if !FileManager.default.fileExists(atPath: "\(ProjectSetting.codeSigningPath)/\(config.certificate).p12") || !FileManager.default.fileExists(atPath: "\(ProjectSetting.codeSigningPath)/\(config.provisioningProfile).mobileprovision"){
+            say(text: "SIGNING IDENTITIES NOT FOUND!")
+            return;
+        }
+        
         if FileManager.default.fileExists(atPath: keyChainDefaultFilePath) {
             deleteKeychain(name: keyChainName)
         }
