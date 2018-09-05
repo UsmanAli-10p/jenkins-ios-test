@@ -58,7 +58,7 @@ enum ProjectSetting {
     static var productName = "MasterDetailApp"
     static let devices: [String] = ["iPhone 8", "iPad Air"]
 
-    static let codeSigningPath = environmentVariable(get: "CODESIGNING_PATH").replacingOccurrences(of: "\"", with: "")
+    static let codeSigningPath = "./Certs" //environmentVariable(get: "CODESIGNING_PATH").replacingOccurrences(of: "\"", with: "")
     static let keyChainDefaultPath = environmentVariable(get: "KEYCHAIN_DEFAULT_PATH").replacingOccurrences(of: "\"", with: "")
     static let certificatePassword = environmentVariable(get: "CERTIFICATE_PASSWORD").replacingOccurrences(of: "\"", with: "")
     static let sdk = "iphoneos11.4"
@@ -85,28 +85,28 @@ class Fastfile: LaneFile {
             deleteKeychain(name: keyChainName)
         }
 
-//        createKeychain(
-//            name: keyChainName,
-//            password: stubKeyChainPassword,
-//            defaultKeychain: false,
-//            unlock: true,
-//            timeout: 3600,
-//            lockWhenSleeps: true
-//        )
-//
-//        importCertificate(
-//            keychainName: keyChainName,
-//            keychainPassword: stubKeyChainPassword,
-//            certificatePath: "\(ProjectSetting.codeSigningPath)/\(config.certificate).p12",
-//            certificatePassword: ProjectSetting.certificatePassword
-//        )
-//
-//        updateProjectProvisioning(
-//            xcodeproj: ProjectSetting.project,
-//            profile: "\(ProjectSetting.codeSigningPath)/\(config.provisioningProfile).mobileprovision",
-//            targetFilter: "^\(ProjectSetting.target)$",
-//            buildConfiguration: config.buildConfiguration
-//        )
+        createKeychain(
+            name: keyChainName,
+            password: stubKeyChainPassword,
+            defaultKeychain: false,
+            unlock: true,
+            timeout: 3600,
+            lockWhenSleeps: true
+        )
+
+        importCertificate(
+            keychainName: keyChainName,
+            keychainPassword: stubKeyChainPassword,
+            certificatePath: "\(ProjectSetting.codeSigningPath)/\(config.certificate).p12",
+            certificatePassword: ProjectSetting.certificatePassword
+        )
+
+        updateProjectProvisioning(
+            xcodeproj: ProjectSetting.project,
+            profile: "\(ProjectSetting.codeSigningPath)/\(config.provisioningProfile).mobileprovision",
+            targetFilter: "^\(ProjectSetting.target)$",
+            buildConfiguration: config.buildConfiguration
+        )
 //
 //        runTests(workspace: ProjectSetting.workspace,
 //            devices: ProjectSetting.devices,
@@ -128,7 +128,7 @@ class Fastfile: LaneFile {
 
         )
 
-//        deleteKeychain(name: keyChainName)
+        deleteKeychain(name: keyChainName)
     }
 
     func developerReleaseLane() {
