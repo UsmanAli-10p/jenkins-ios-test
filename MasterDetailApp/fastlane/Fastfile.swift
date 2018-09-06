@@ -81,47 +81,50 @@ class Fastfile: LaneFile {
     }
 
     func package(config: Configuration) {
-        if !FileManager.default.fileExists(atPath: "\(ProjectSetting.codeSigningPath)/\(config.certificate).p12") || !FileManager.default.fileExists(atPath: "\(ProjectSetting.codeSigningPath)/\(config.provisioningProfile).mobileprovision"){
-            say(text: "SIGNING IDENTITIES NOT FOUND!")
-            return;
-        }
-        
-        if FileManager.default.fileExists(atPath: keyChainDefaultFilePath) {
-            deleteKeychain(name: keyChainName)
-        }
+//        if !FileManager.default.fileExists(atPath: "\(ProjectSetting.codeSigningPath)/\(config.certificate).p12") || !FileManager.default.fileExists(atPath: "\(ProjectSetting.codeSigningPath)/\(config.provisioningProfile).mobileprovision"){
+//            say(text: "SIGNING IDENTITIES NOT FOUND!")
+//            return;
+//        }
+//
+//        if FileManager.default.fileExists(atPath: keyChainDefaultFilePath) {
+//            deleteKeychain(name: keyChainName)
+//        }
+//
+//        createKeychain(
+//            name: keyChainName,
+//            password: stubKeyChainPassword,
+//            defaultKeychain: false,
+//            unlock: true,
+//            timeout: 3600,
+//            lockWhenSleeps: true,
+//            addToSearchList: true
+//        )
+//
+//        importCertificate(
+//            keychainName: keyChainName,
+//            keychainPassword: stubKeyChainPassword,
+//            certificatePath: "\(ProjectSetting.codeSigningPath)/\(config.certificate).p12",
+//            certificatePassword: ProjectSetting.certificatePassword
+//        )
 
-        createKeychain(
-            name: keyChainName,
-            password: stubKeyChainPassword,
-            defaultKeychain: false,
-            unlock: true,
-            timeout: 3600,
-            lockWhenSleeps: true
-        )
-
-        importCertificate(
-            keychainName: keyChainName,
-            keychainPassword: stubKeyChainPassword,
-            certificatePath: "\(ProjectSetting.codeSigningPath)/\(config.certificate).p12",
-            certificatePassword: ProjectSetting.certificatePassword
-        )
-
-        updateProjectProvisioning(
-            xcodeproj: ProjectSetting.project,
-            profile: "\(ProjectSetting.codeSigningPath)/\(config.provisioningProfile).mobileprovision",
-            targetFilter: "^\(ProjectSetting.target)$",
-            buildConfiguration: config.buildConfiguration
-        )
+//        updateProjectProvisioning(
+//            xcodeproj: ProjectSetting.project,
+//            profile: "\(ProjectSetting.codeSigningPath)/\(config.provisioningProfile).mobileprovision",
+//            targetFilter: "^\(ProjectSetting.target)$",
+//            buildConfiguration: config.buildConfiguration
+//        )
 //
 //        runTests(workspace: ProjectSetting.workspace,
 //            devices: ProjectSetting.devices,
 //            scheme: ProjectSetting.scheme)
+        
+        setupJenkins()
 
         buildApp(
             workspace: ProjectSetting.workspace,
             scheme: ProjectSetting.scheme,
             clean: true,
-            outputDirectory: "./BUILDS/",
+            outputDirectory: "./output/",
             outputName: "\(ProjectSetting.productName).ipa",
             configuration: config.buildConfiguration,
             silent: true,
@@ -133,7 +136,7 @@ class Fastfile: LaneFile {
 
         )
 
-        deleteKeychain(name: keyChainName)
+//        deleteKeychain(name: keyChainName)
     }
 
     func developerReleaseLane() {
