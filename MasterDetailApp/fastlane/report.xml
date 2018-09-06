@@ -5,12 +5,42 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: cocoapods" time="8.328541">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.011043">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: build_app" time="135.26132">
+      <testcase classname="fastlane.lanes" name="1: cocoapods" time="2.271959">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: delete_keychain" time="0.027923">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: create_keychain" time="0.143188">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: import_certificate" time="0.24066">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="5: update_project_provisioning" time="0.156313">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="6: gym" time="109.934497">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="7: delete_keychain" time="0.044848">
         
       </testcase>
     
