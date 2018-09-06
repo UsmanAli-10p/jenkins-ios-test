@@ -35,7 +35,7 @@ pipeline {
         }
     }
     post {
-        always {
+        success {
             archiveArtifacts artifacts: 'MasterDetailApp/output/**', fingerprint: true
         }
     }
