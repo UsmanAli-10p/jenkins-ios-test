@@ -16,13 +16,18 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios prod
+### ios developerRelease
 ```
-fastlane ios prod
+fastlane ios developerRelease
 ```
 Common setup for all lanes
 
 Description of what the lane does
+### ios prod
+```
+fastlane ios prod
+```
+
 ### ios qaRelease
 ```
 fastlane ios qaRelease

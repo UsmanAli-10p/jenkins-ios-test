@@ -6,8 +6,8 @@
 	<string>manual</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.10pearls.mda</key>
-		<string>GenericDevProfile</string>
+		<key>com.10pearls.ibmt</key>
+		<string>Hologic IBMT Development</string>
 	</dict>
 </dict>
 </plist>
