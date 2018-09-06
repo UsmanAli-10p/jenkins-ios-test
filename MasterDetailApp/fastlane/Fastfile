@@ -26,8 +26,16 @@ end
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :qaRelease do
 
+  lane :developerRelease do
+    qaRelease()
+  end
+
+  lane :prod do
+    qaRelease()
+  end
+
+  lane :qaRelease do
     delete_keychain(name: keyChainName) rescue nil
     create_keychain(
             name: keyChainName,
