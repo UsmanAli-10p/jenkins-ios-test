@@ -5,20 +5,20 @@
 	<key>compileBitcode</key>
 	<false/>
 	<key>method</key>
-	<string>development</string>
+	<string>enterprise</string>
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.10pearls.ibmt</key>
-		<string>af18852a-6ce6-45d8-a20f-88e5812bc596</string>
+		<string>Hologic IBMT Enterprise</string>
 	</dict>
 	<key>signingCertificate</key>
-	<string>iPhone Developer</string>
+	<string>iPhone Distribution: TENPEARLS, LLC</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>
-	<string>6VY9BF76RN</string>
+	<string>V3XSAK8ANR</string>
 	<key>thinning</key>
 	<string>&lt;none&gt;</string>
 </dict>
