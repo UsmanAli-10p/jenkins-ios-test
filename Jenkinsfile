@@ -2,13 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Gems') {
-            steps {
-                dir ('MasterDetailApp') { 
-                    sh 'bundle install'
-                }
-            }
-        }
         stage('Generate IPA for master') {
         	when { branch 'master' }
             steps {
