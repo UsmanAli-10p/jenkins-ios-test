@@ -535,7 +535,7 @@
 			baseConfigurationReference = 42B89A13B83BFA792E9AE177 /* Pods-MasterDetailApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V3XSAK8ANR;
 				INFOPLIST_FILE = MasterDetailApp/Info.plist;
@@ -545,8 +545,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.10pearls.ibmt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "af18852a-6ce6-45d8-a20f-88e5812bc596";
-				PROVISIONING_PROFILE_SPECIFIER = "Hologic IBMT Development";
+				PROVISIONING_PROFILE = "309c86f0-6a19-4d18-a023-c58cc82e08dd";
+				PROVISIONING_PROFILE_SPECIFIER = "Hologic IBMT Enterprise";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -557,7 +557,7 @@
 			baseConfigurationReference = FC1BBF52F301961A30BB764C /* Pods-MasterDetailApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V3XSAK8ANR;
 				INFOPLIST_FILE = MasterDetailApp/Info.plist;
@@ -567,8 +567,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.10pearls.ibmt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "af18852a-6ce6-45d8-a20f-88e5812bc596";
-				PROVISIONING_PROFILE_SPECIFIER = "Hologic IBMT Development";
+				PROVISIONING_PROFILE = "309c86f0-6a19-4d18-a023-c58cc82e08dd";
+				PROVISIONING_PROFILE_SPECIFIER = "Hologic IBMT Enterprise";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
