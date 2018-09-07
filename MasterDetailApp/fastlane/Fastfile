@@ -72,8 +72,7 @@ platform :ios do
             configuration: "Release",
             silent: true,
             export_method: "enterprise",
-            export_options: "./fastlane/QaReleaseExportOptions.plist",
-            sdk: sdk
+            export_options: "./fastlane/QaReleaseExportOptions.plist"
         )
 
     # delete_keychain(name: keyChainName) rescue nil
