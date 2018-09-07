@@ -61,7 +61,7 @@ platform :ios do
     #         build_configuration: "Release"
     #     )
 
-    setup_jenkins()
+    # setup_jenkins()
 
     gym(
             workspace: "MasterDetailApp.xcworkspace",
