@@ -54,12 +54,12 @@ platform :ios do
             certificate_password: ""
         )
 
-    update_project_provisioning(
-            xcodeproj: "MasterDetailApp.xcodeproj",
-            profile: "./Certs/Hologic_IBMT_Development.mobileprovision",
-            target_filter: "MasterDetailApp",
-            build_configuration: "Release"
-        )
+    # update_project_provisioning(
+    #         xcodeproj: "MasterDetailApp.xcodeproj",
+    #         profile: "./Certs/Hologic_IBMT_Development.mobileprovision",
+    #         target_filter: "MasterDetailApp",
+    #         build_configuration: "Release"
+    #     )
 
     gym(
             workspace: "MasterDetailApp.xcworkspace",
