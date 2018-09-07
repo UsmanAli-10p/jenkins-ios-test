@@ -5,7 +5,7 @@ pipeline {
         stage('Install Gems') {
             steps {
                 dir ('MasterDetailApp') { 
-                    sh 'sudo bundle install'
+                    sh 'bundle install'
                 }
             }
         }
